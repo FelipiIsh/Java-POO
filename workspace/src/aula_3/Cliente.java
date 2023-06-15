@@ -1,5 +1,9 @@
 package aula_3;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 //javabeans
 
 public class Cliente {
@@ -7,20 +11,24 @@ public class Cliente {
 	//atributos
 
 	private String nomeTitular, cpfTitular, rgTitular, enderecoTitular;
+	private final Date dataNasc;
 	
 	//construtor vazio
 	
-	public Cliente() {
+	//public Cliente() {
 		
-	}
+	//}
 	
 	//construtor
 
-	public Cliente(String nomeTitular, String cpfTitular, String rgTitular, String enderecoTitular) {
+	public Cliente(String nomeTitular, String cpfTitular, String rgTitular, String enderecoTitular, String dataNasc) throws ParseException {
 		this.nomeTitular = nomeTitular;
 		this.cpfTitular = cpfTitular;
 		this.rgTitular = rgTitular;
 		this.enderecoTitular = enderecoTitular;
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		this.dataNasc = formato.parse(dataNasc);
+		
 	}
 
 	// getters e setters

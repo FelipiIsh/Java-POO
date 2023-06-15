@@ -1,16 +1,17 @@
 package aula_3;
 
+import java.text.ParseException;
 import java.util.Date;
 
 public class TestaConta {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 
 		//objetos
-		Cliente felipi = new Cliente("Felipi", "123456789", "123456789", "Rua 123 de oliveira, 4");
-		Cliente adriane = new Cliente("Adriane", "987654321", "987654321", "Rua 321 de oliveira, 3");
-		ContaCorrente contaFelipi = new ContaCorrente(felipi, 1, 1, "teste");
-		ContaCorrente contaAdriane = new ContaCorrente(adriane, 2, 1, "teste");
+		Cliente clienteFelipi = new Cliente("Felipi", "123456789", "123456789", "Rua 123 de oliveira, 4", "02/10/2004");
+		Cliente clienteAdriane = new Cliente("Adriane", "987654321", "987654321", "Rua 321 de oliveira, 3", "20/05/1980");
+		ContaCorrente contaFelipi = new ContaCorrente(clienteFelipi, 1, 1, "teste");
+		ContaCorrente contaAdriane = new ContaCorrente(clienteAdriane, 2, 1, "teste");
 		CDB cdb = new CDB();
 		LCI lci = new LCI();
 		LCA lca = new LCA();
@@ -44,6 +45,9 @@ public class TestaConta {
 		contaFelipi.investimento(lci, 1000);
 		
 		contaFelipi.exibirSaldo();
+		
+		System.out.println(contaFelipi);
+		
 		//
 
 		
