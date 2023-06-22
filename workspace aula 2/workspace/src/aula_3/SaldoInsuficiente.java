@@ -1,5 +1,7 @@
 package aula_3;
 
-public class SaldoInsuficiente {
+public class SaldoInsuficiente extends Exception {
+	
+	
 
 }
