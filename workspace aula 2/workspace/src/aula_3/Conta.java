@@ -26,14 +26,14 @@ public abstract class Conta {
 
 	// Métodos
 	// sacar
-	public boolean sacar(double valor) throws SaldoInsificiente{
+	public boolean sacar(double valor) {
 		if (valor > 0) {
 			if (this.saldo >= valor) {
 				this.saldo -= valor;
 				return true;
 			}
 		} else {
-			throw new SaldoInsuficiente ();
+			
 		}
 		return false;
 	}
